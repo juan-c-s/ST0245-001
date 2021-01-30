@@ -7,12 +7,16 @@
  */
 
 public class Punto {
-    double x;
-    double y;
+    private double x;
+    private double y;
+    private double polarAngle;
+    private double polarRadius;
 
     public Punto(double x, double y) {
         this.x = x;
         this.y = y;
+        this.polarAngle = Math.atan(y / x);
+        this.polarRadius = Math.sqrt(Math.pow(x - 0, 2) + Math.pow(y - 0, 2));
     }
 
     public double getX() {
@@ -30,11 +34,11 @@ public class Punto {
     }
 
     public double polarAngle() {
-        return Math.atan(this.y / this.x);
+        return this.polarAngle;
     }
 
     public double polarRadius() {
-        return Math.sqrt(Math.pow(this.x - 0, 2) + Math.pow(this.y - 0, 2));
+        return this.polarRadius;
     }
 
 }
