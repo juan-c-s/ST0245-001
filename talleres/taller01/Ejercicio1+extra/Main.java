@@ -1,12 +1,10 @@
 public class Main {
     public static void main(String[] argumento) {
-        Punto primerPunto = new Punto(0.0, 0.0);
+        Punto primerPunto = new Punto(0.1, 0.0);
         Punto segundoPunto = new Punto(3.0, 3.0);
 
         Line2D segmento = new Line2D(primerPunto, segundoPunto);
 
-        segmento.setPendiente();
-        segmento.setInterceptoY();
 
         System.out.println("Intecepto: " + segmento.getInterceptoY());
         System.out.println("Pendiente: " + segmento.getPendiente());
