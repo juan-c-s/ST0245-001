@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.io.FileReader;
 
 
@@ -9,12 +10,34 @@ public class CSVFile{
     private int maxWith;
     private int height;
     private int[][] matrix;
+    
 
-    CSVFile(String path){
+    CSVFile(String path,boolean compress,boolean decompress){
         this.paths = path;
         this.findWithHeight();
         this.createMatrix();
         this.fillMatrix();
+        if(compress){
+            this.compress();
+        }
+        if(decompress){
+            this.decompress();
+        }
+
+    }
+
+    public void compress(){
+        //this is the compress area 
+
+    }
+
+    public void decompress(){
+        //this is the decompress area 
+    }
+
+    public void save(){
+        // aqui va el codigo  que guarda la verzion compress o la decompress 
+        System.out.println(Arrays.deepToString(matrix));
     }
 
     public int getMaxWith(){
