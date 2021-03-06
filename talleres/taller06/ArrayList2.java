@@ -1,4 +1,3 @@
-
 public class ArrayList2 {
     private int size;
     private int vectorSize;
@@ -37,6 +36,9 @@ public class ArrayList2 {
     }
 
     public int at(int index) {
+        if(index < 0 || index >= this.size){
+            throw new IndexOutOfBoundsException();
+        }
         return list[index];
     }
 
@@ -59,6 +61,9 @@ public class ArrayList2 {
     }
 
     public void delete(int index) {
+        if(index < 0 || index >= this.size){
+            throw new IndexOutOfBoundsException();
+        }
         for (int i = 0; i < this.size; i++) {
             if (i == index) {
                 int temp = list[i];
@@ -83,13 +88,6 @@ public class ArrayList2 {
 
         return str;
     }
-    // public void eraseElement(int el) {
-    // if (size + 1 <= vectorSize) {
-    // list[size] = el;
-    // size++;
-    // } else {
-
-    // }
-    // }
+   
 
 }
