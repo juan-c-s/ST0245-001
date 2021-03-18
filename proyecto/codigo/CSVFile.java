@@ -29,14 +29,34 @@ public class CSVFile {
 
     }
 
-    public void createImage(int matriz[][]) {
+    public void createOriginalImage() {
         try {
-            int rowMax = matriz.length;
-            int colMax = matriz[0].length;
+            int rowMax = height;
+            int colMax = maxWidth;
             BufferedImage img = new BufferedImage(colMax, rowMax, BufferedImage.TYPE_INT_RGB);
             for (int i = 0; i < rowMax; i++) {
                 for (int j = 0; j < colMax; j++) {
-                    int cl = matriz[i][j];
+                    int cl = this.matrix[i][j];
+                    Color newColor = new Color(cl, cl, cl);
+                    img.setRGB(j, i, newColor.getRGB());
+                }
+
+            }
+            File out = new File("Original.jpg");
+            ImageIO.write(img, "jpg", out);
+        } catch (Exception e) {
+            System.out.println("Error2: " + e);
+        }
+    }
+
+    public void createCompressedImage() {
+        try {
+            int rowMax = this.compressedMatrix.length;
+            int colMax = this.compressedMatrix[0].length;
+            BufferedImage img = new BufferedImage(colMax, rowMax, BufferedImage.TYPE_INT_RGB);
+            for (int i = 0; i < rowMax; i++) {
+                for (int j = 0; j < colMax; j++) {
+                    int cl = this.compressedMatrix[i][j];
                     Color newColor = new Color(cl, cl, cl);
                     img.setRGB(j, i, newColor.getRGB());
                 }
