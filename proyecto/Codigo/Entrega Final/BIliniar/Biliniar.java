@@ -39,10 +39,10 @@ public class Biliniar {
 
         int iC = 0;
         // Contadores de compressed Matrix
-        for (int i = 0; i < this.matrix.length * 2 && iC < temp.length; i += 2) {
+        for (int i = 0; i < this.matrix.length  && iC < temp.length; i += 2) {
 
             int jC = 0;
-            for (int j = 0; j < this.matrix[0].length * 2 && jC < temp[0].length; j += 2) {
+            for (int j = 0; j < this.matrix[0].length  && jC < temp[0].length; j += 2) {
 
                 int horizontal1 = average(this.matrix[i][j], this.matrix[i][j + 1]);
                 int horizontal2 = average(this.matrix[i + 1][j], this.matrix[i + 1][j + 1]);
